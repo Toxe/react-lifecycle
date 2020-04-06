@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "React Lifecycle",
+  "name": "React Lifecycle",
   "icons": [
     {
       "src": "favicon.ico",

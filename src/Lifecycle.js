@@ -1,10 +1,38 @@
 import React, { Component } from "react";
 
 export default class Lifecycle extends Component {
-    state = {
-        clicks: 0,
-        visible: true,
-    };
+    constructor() {
+        console.log("constructor()");
+
+        super();
+
+        this.state = {
+            clicks: 0,
+            visible: true,
+        };
+    }
+
+    componentDidMount() {
+        console.log("componentDidMount()");
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        console.log("shouldComponentUpdate()");
+        return true;
+    }
+
+    getSnapshotBeforeUpdate(prevProps, prevState) {
+        console.log("getSnapshotBeforeUpdate()");
+        return null;
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        console.log("componentDidUpdate()");
+    }
+
+    componentWillUnmount() {
+        console.log("componentWillUnmount()");
+    }
 
     incClicks = () => {
         this.setState((prevState) => ({
@@ -17,6 +45,8 @@ export default class Lifecycle extends Component {
     };
 
     render() {
+        console.log("render()");
+
         if (!this.state.visible)
             return null;
 
